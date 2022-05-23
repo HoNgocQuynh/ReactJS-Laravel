@@ -19,6 +19,7 @@ return new class extends Migration
             $table->id();
             $table->string('brandName', 100);
             $table->string('slug', 100);
+            $table->string('image', 255);
             $table->string('description', 200);
             $table->tinyInteger('status')->unsigned()->default(1);
             $table->timestamp('created_at')->useCurrent();

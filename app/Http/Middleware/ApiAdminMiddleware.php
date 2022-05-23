@@ -22,11 +22,11 @@ class ApiAdminMiddleware
                 return $next($request);
             }
             else{
-                return response()->json(['message'=>'Access Denied.! You are not an Admin', ],403);
+                return response()->json(['message'=>'Yêu cầu bị từ chối.! Bạn không phải người quản trị!', ],403);
             }
         }
         else{
-           return response()->json(['status'=>401, 'message'=>'Please Login First']);
+           return response()->json(['status'=>401, 'message'=>'Đăng nhập để tiếp tục']);
         }
         
     }

@@ -17,11 +17,10 @@ return new class extends Migration
     {
         Schema::create('links', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 100);
+            $table->string('title', 100)->nullable();
             $table->tinyInteger('position');
-            $table->string('image', 100);
-            $table->string('link', 255);
-            $table->tinyInteger('order');
+            $table->string('url', 100);
+            $table->string('image', 255)->nullable();
             $table->tinyInteger('status')->unsigned()->default(1);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable();

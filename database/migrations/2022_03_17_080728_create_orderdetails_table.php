@@ -19,10 +19,9 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('orderId')->unsigned();
             $table->bigInteger('productId')->unsigned();
-            $table->float('price');
+            $table->integer('price');
             $table->smallInteger('quantity');
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updatee_at')->nullable();
+            $table->timestamps();
             $table->softDeletes();
         });
     }
@@ -35,6 +34,5 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('orderdetails');
-        $table->dropColumn('id');
     }
 };

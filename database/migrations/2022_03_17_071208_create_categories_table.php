@@ -19,6 +19,8 @@ return new class extends Migration
             $table->id();
             $table->string('catName', 50);
             $table->string('slug', 50);
+            $table->string('image', 255)->nullable();
+            $table->string('icon', 255)->nullable();
             $table->integer('parentId')->unsigned();
             $table->string('description', 200)-> nullable();
             $table->tinyInteger('status')->length(1)->unsigned()->default(1);
@@ -28,7 +30,7 @@ return new class extends Migration
             $table->softDeletes();
         });
     }
-
+    
     /**
      * Reverse the migrations.
      *

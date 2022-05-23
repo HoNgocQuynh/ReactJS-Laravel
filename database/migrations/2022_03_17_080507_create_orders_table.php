@@ -17,13 +17,22 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('customerId')->unsigned();
-            $table->float('total', 10, 2);
-            $table->text('note')->nullable();
-            $table->tinyInteger('status')->unsigned()->default(1);
+            $table->integer('user_id');
+            $table->string('firstName');
+            $table->string('lastName');
+            $table->string('phone');
+            $table->string('email');
+            $table->string('address');
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
+            $table->string('zipcode')->nullable();
+            $table->string('payment_id')->nullable();
+            $table->string('payment_mode');
+            $table->string('tracking_no');
+            $table->tinyInteger('status')->default('0');
+            $table->text('remark')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable();
-            $table->softDeletes();
         });
     }
 
